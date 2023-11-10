@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <span class="code.comment">1) Elabore um programa que leia 10 valores inteiros e depois imprima esses 10 valores.</span>
+    <code>
+        #include <stdio.h>
+
+            int main() {
+                int valores[10];
+            
+                for (int i = 0; i < 10; i++) {
+                    printf("Digite o valor %d: ", i + 1);
+                    scanf("%d", &valores[i]);
+                }
+            
+                printf("\nValores lidos: ");
+                for (int i = 0; i < 10; i++) {
+                    printf("%d ", valores[i]);
+                }
+            
+                return 0;
+            }
+
+            <span class="code.comment">2) Elabore um programa que leia 10 valores inteiros e depois imprima a soma desses 10 valores.
+                #include <stdio.h></span>
+
+            int main() {
+                int valores[10], soma = 0;
+                
+                for (int i = 0; i < 10; i++) {
+                    printf("Digite o valor %d: ", i + 1);
+                    scanf("%d", &valores[i]);
+                    soma += valores[i];
+                }
+                
+                printf("\nSoma dos valores: %d", soma);
+                
+                return 0;
+            }
+                
+            #include <stdio.h>
+
+                int main() {
+                    int valores[10];
+                    float media = 0;
+                
+                    // 3) Elabore um programa que leia 10 valores inteiros e depois calcule a média desses 10 valores.
+                    for (int i = 0; i < 10; i++) {
+                        printf("Digite o valor %d: ", i + 1);
+                        scanf("%d", &valores[i]);
+                        media += valores[i];
+                    }
+                
+                    media /= 10;
+                
+                    printf("\nMédia dos valores: %.2f", media);
+                
+                    return 0;
+                }
+                
+                #include <stdio.h>
+
+                    int main() {
+                        int valores[10], pares = 0, impares = 0;
+                    
+                        // 4) Elabore um programa que leia 10 valores inteiros e imprima quantos são pares e quantos são ímpares.
+                        for (int i = 0; i < 10; i++) {
+                            printf("Digite o valor %d: ", i + 1);
+                            scanf("%d", &valores[i]);
+                    
+                            if (valores[i] % 2 == 0) {
+                                pares++;
+                            } else {
+                                impares++;
+                            }
+                        }
+                    
+                        printf("\nQuantidade de pares: %d\nQuantidade de ímpares: %d", pares, impares);
+                    
+                        return 0;
+                    }
+        
+                    #include <stdio.h>
+
+                        int main() {
+                            int valores[10];
+                            int numeroBusca;
+                            int vezesEncontrado = 0;
+                        
+                            // 5) Elabore um programa que leia 10 valores inteiros, após a leitura, solicite ao usuário inserir um
+                            // número inteiro que será verificado se existe dentro do vetor preenchido anteriormente.
+                            for (int i = 0; i < 10; i++) {
+                                printf("Digite o valor %d: ", i + 1);
+                                scanf("%d", &valores[i]);
+                            }
+                        
+                            printf("\nDigite um número para buscar no vetor: ");
+                            scanf("%d", &numeroBusca);
+                        
+                            for (int i = 0; i < 10; i++) {
+                                if (valores[i] == numeroBusca) {
+                                    vezesEncontrado++;
+                                }
+                            }
+                        
+                            if (vezesEncontrado > 0) {
+                                printf("\nO número %d foi encontrado %d vezes no vetor.", numeroBusca, vezesEncontrado);
+                            } else {
+                                printf("\nO número %d não foi encontrado no vetor.", numeroBusca);
+                            }
+                        
+                            return 0;
+                        }
+                        #include <stdio.h>
+
+                            int main() {
+                                int valores[10];
+                                int numeroBusca;
+                                int vezesEncontrado = 0;
+                            
+                                // 6) Elabore um programa que leia 10 valores inteiros, após a leitura, solicite ao usuário inserir um
+                                // número inteiro que será verificado quantas vezes existe dentro do vetor preenchido.
+                                for (int i = 0; i < 10; i++) {
+                                    printf("Digite o valor %d: ", i + 1);
+                                    scanf("%d", &valores[i]);
+                                }
+                            
+                                printf("\nDigite um número para buscar no vetor: ");
+                                scanf("%d", &numeroBusca);
+                            
+                                for (int i = 0; i < 10; i++) {
+                                    if (valores[i] == numeroBusca) {
+                                        vezesEncontrado++;
+                                    }
+                                }
+                            
+                                printf("\nO número %d foi encontrado %d vezes no vetor.", numeroBusca, vezesEncontrado);
+                            
+                                return 0;
+                            }
+                              
+                            #include <stdio.h>
+
+                                int main() {
+                                    int valores[10];
+                                    int numeroBusca;
+                                    int vezesEncontrado = 0;
+                                    int posicoesEncontradas[10];
+                                    int contadorPosicoes = 0;
+                                
+                                    // 7) Elabore um programa que leia 10 valores inteiros, após a leitura, solicite ao usuário inserir um
+                                    // número inteiro que será verificado quantas vezes existe e em qual posição está dentro do vetor
+                                    // preenchido anteriormente.
+                                    for (int i = 0; i < 10; i++) {
+                                        printf("Digite o valor %d: ", i + 1);
+                                        scanf("%d", &valores[i]);
+                                    }
+                                
+                                    printf("\nDigite um número para buscar no vetor: ");
+                                    scanf("%d", &numeroBusca);
+                                
+                                    for (int i = 0; i < 10; i++) {
+                                        if (valores[i] == numeroBusca) {
+                                            vezesEncontrado++;
+                                            posicoesEncontradas[contadorPosicoes++] = i;
+                                        }
+                                    }
+                                
+                                    if (vezesEncontrado > 0) {
+                                        printf("\nO número %d foi encontrado %d vezes no vetor nas posições: ", numeroBusca, vezesEncontrado);
+                                        for (int i = 0; i < contadorPosicoes; i++) {
+                                            printf("%d ", posicoesEncontradas[i] + 1);
+                                        }
+                                    } else {
+                                        printf("\nO número %d não foi encontrado no vetor.", numeroBusca);
+                                    }
+                                
+                                    return 0;
+                                }
+                                #include <stdio.h>
+
+                                    int main() {
+                                        int valores[10];
+                                    
+                                        // 8) A ordenação é o processo de rearranjar os elementos de acordo com um critério específico,
+                                        // com o objetivo de facilitar a localização (WIRTH, 1999). Na literatura, existem diversos métodos de
+                                        // ordenação, sendo o método da bolha (Bubble Sort) o mais conhecido. O método da bolha consiste
+                                        // em percorrer o vetor repetidas vezes, comparando os elementos vizinhos. Se eles estão fora de
+                                        // ordem, é efetuada uma troca de posição. Elabore um programa que execute o algoritmo do Bubble
+                                        // Sort para um conjunto de 10 valores.
+                                        for (int i = 0; i < 10; i++) {
+                                            printf("Digite o valor %d: ", i + 1);
+                                            scanf("%d", &valores[i]);
+                                        }
+                                    
+                                        // Algoritmo de Bubble Sort
+                                        for (int i = 0; i < 10 - 1; i++) {
+                                            for (int j = 0; j < 10 - i - 1; j++) {
+                                                if (valores[j] > valores[j + 1]) {
+                                                    // Troca os elementos se estiverem fora de ordem
+                                                    int temp = valores[j];
+                                                    valores[j] = valores[j + 1];
+                                                    valores[j + 1] = temp;
+                                                }
+                                            }
+                                        }
+                                    
+                                        printf("\nValores ordenados pelo Bubble Sort: ");
+                                        for (int i = 0; i < 10; i++) {
+                                            printf("%d ", valores[i]);
+                                        }
+                                    
+                                        return 0;
+                                    }
+                                                                   
+    </code>
+</body>
+</html>
